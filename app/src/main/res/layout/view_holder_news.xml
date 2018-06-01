@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="250dp"
     android:layout_margin="@dimen/margin_medium"
-    android:background="@drawable/news_holder"
+    android:background="@drawable/img_newsplaceholder1"
     android:padding="@dimen/margin_medium">
 
     <TextView
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/tv_publication_title"
         android:layout_alignLeft="@+id/tv_publication_category"
-        android:text="Jeremy Forbes"
+        android:text="Anna Rose"
         android:textColor="@color/secondary_text"
         android:textSize="@dimen/text_regular"/>
 
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/tv_publication_category"
         android:layout_alignLeft="@+id/tv_publication_category"
-        android:text="How to start a conversation"
+        android:text="How to live healthy life"
         android:textColor="@color/secondary_text"
         android:textSize="@dimen/text_regular_3x"
         android:textStyle="bold" />
@@ -34,7 +34,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="@dimen/margin_medium"
         android:layout_marginLeft="@dimen/margin_medium"
-        android:text="about suicide"
+        android:text="About food"
         android:textColor="@color/secondary_text"
         android:textSize="@dimen/text_regular_3x"
         android:textStyle="bold" />
