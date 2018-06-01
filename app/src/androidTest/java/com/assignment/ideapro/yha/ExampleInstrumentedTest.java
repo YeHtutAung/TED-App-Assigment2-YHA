@@ -1,4 +1,4 @@
-package com.assignment.ideapro.ted_app_assignment_yha;
+package com.assignment.ideapro.yha;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.assignment.ideapro.ted_app_assignment_yha", appContext.getPackageName());
+        assertEquals("com.assignment.ideapro.ted.app.assignment.yha", appContext.getPackageName());
     }
 }

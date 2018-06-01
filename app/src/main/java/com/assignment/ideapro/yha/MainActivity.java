@@ -1,4 +1,4 @@
-package com.assignment.ideapro.ted_app_assignment_yha;
+package com.assignment.ideapro.yha;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.assignment.ideapro.ted_app_assignment_yha.adapters.NewsAdapter;
+import com.assignment.ideapro.yha.adapters.NewsAdapter;
 
 public class MainActivity extends AppCompatActivity {
 

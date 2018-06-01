@@ -1,11 +1,11 @@
-package com.assignment.ideapro.ted_app_assignment_yha.adapters;
+package com.assignment.ideapro.yha.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.assignment.ideapro.ted_app_assignment_yha.R;
-import com.assignment.ideapro.ted_app_assignment_yha.viewholders.NewsViewHolder;
+import com.assignment.ideapro.yha.R;
+import com.assignment.ideapro.yha.viewholders.NewsViewHolder;
 
 public class NewsAdapter extends RecyclerView.Adapter {
     @Override

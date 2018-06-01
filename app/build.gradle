@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.assignment.ideapro.ted_app_assignment_yha"
+        applicationId "com.assignment.ideapro.ted.app.assignment.yha"
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
