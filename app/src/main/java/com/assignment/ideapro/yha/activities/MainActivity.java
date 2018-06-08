@@ -1,30 +1,31 @@
-package com.assignment.ideapro.yha;
+package com.assignment.ideapro.yha.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import com.assignment.ideapro.yha.R;
 import com.assignment.ideapro.yha.adapters.NewsAdapter;
+import com.assignment.ideapro.yha.delegates.ITedTalkDelegate;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity implements ITedTalkDelegate {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         RecyclerView rvNews = findViewById(R.id.rv_news);
 
-        NewsAdapter newsAdapter = new NewsAdapter();
+        NewsAdapter newsAdapter = new NewsAdapter(this);
         rvNews.setAdapter(newsAdapter);
         rvNews.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
                 LinearLayoutManager.VERTICAL, false));
@@ -59,5 +60,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onTapImage() {
+        Intent intent = new Intent(getApplicationContext(), TedTalksDeatilsActivity.class);
+        startActivity(intent);
     }
 }

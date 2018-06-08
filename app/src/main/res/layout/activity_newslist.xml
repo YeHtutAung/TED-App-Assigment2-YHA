@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/picture"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_newsplaceholder2" />
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_topic"
+        android:layout_alignLeft="@+id/tv_topic"
+        android:text="Ingrid Fetell Lee"
+        android:textColor="@color/secondary_text"
+        android:textSize="@dimen/text_regular" />
+
+    <TextView
+        android:id="@+id/tv_topic"
+        style="@style/WhiteTextBlackShadow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_topic1"
+        android:layout_marginLeft="@dimen/margin_medium_2"
+        android:text="Where joy hides and how to"
+        android:textSize="@dimen/text_regular_3x"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_topic1"
+        style="@style/WhiteTextBlackShadow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/picture"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/margin_medium_2"
+        android:text="find it"
+        android:textSize="@dimen/text_regular_3x"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_topic1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/margin_medium_2"
+        android:text="13:38"
+        android:textColor="@color/secondary_text" />
+
+    <ImageView
+        android:id="@+id/btn_white_vret"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_topic"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        android:layout_marginRight="@dimen/margin_medium_2"
+        android:foreground="@drawable/ripple"
+        android:padding="@dimen/margin_small"
+        android:src="@drawable/ic_more_vert_white_24dp" />
+</RelativeLayout>

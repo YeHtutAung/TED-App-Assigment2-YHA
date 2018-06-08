@@ -1,36 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
+
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme">
+        android:background="@color/bg_color">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="@string/title"
-            app:titleTextColor="@color/primary_text" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_ted_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="TED"
+                android:textColor="@color/special_text"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_ted_sub_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/tv_ted_title"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_toRightOf="@id/tv_ted_title"
+                android:text="Talks"
+                android:textColor="@color/special_text"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/btn_vret"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/tv_ted_title"
+                android:clickable="true"
+                android:foreground="@drawable/ripple"
+                android:padding="@dimen/margin_small"
+                android:src="@drawable/ic_more_vert_grey_24dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_icons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_ted_title"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="@drawable/ripple">
+
+                    <ImageView
+                        android:id="@+id/btn_list"
+                        style="@style/icons_behavior"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_list_red_36dp" />
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="@drawable/ripple">
+
+                    <ImageView
+                        android:id="@+id/btn_subscriptions"
+                        style="@style/icons_behavior"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:src="@drawable/ic_subscriptions_grey_24dp" />
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="@drawable/ripple">
+
+                    <ImageView
+                        android:id="@+id/btn_headset"
+                        style="@style/icons_behavior"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:src="@drawable/ic_headset_grey_24dp" />
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="@drawable/ripple">
+
+                    <ImageView
+                        android:id="@+id/btn_light_bulb"
+                        style="@style/icons_behavior"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:src="@drawable/ic_lightbulb_outline_grey_24dp" />
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="@drawable/ripple">
+
+                    <ImageView
+                        android:id="@+id/btn_person_pin"
+                        style="@style/icons_behavior"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:src="@drawable/ic_person_pin_grey_24dp" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
 
     </android.support.design.widget.AppBarLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_news"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+
     </FrameLayout>
 
 
@@ -40,6 +174,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/ic_search" />
+        android:src="@drawable/ic_search_white_36dp"
+        app:fabSize="normal" />
 
 </android.support.design.widget.CoordinatorLayout>
