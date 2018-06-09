@@ -67,7 +67,7 @@
 
                     <ImageView
                         android:id="@+id/btn_list"
-                        style="@style/icons_behavior"
+                        style="@style/icons_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_list_red_36dp" />
@@ -84,7 +84,7 @@
 
                     <ImageView
                         android:id="@+id/btn_subscriptions"
-                        style="@style/icons_behavior"
+                        style="@style/icons_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_small"
@@ -102,7 +102,7 @@
 
                     <ImageView
                         android:id="@+id/btn_headset"
-                        style="@style/icons_behavior"
+                        style="@style/icons_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_small"
@@ -120,7 +120,7 @@
 
                     <ImageView
                         android:id="@+id/btn_light_bulb"
-                        style="@style/icons_behavior"
+                        style="@style/icons_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_small"
@@ -138,7 +138,7 @@
 
                     <ImageView
                         android:id="@+id/btn_person_pin"
-                        style="@style/icons_behavior"
+                        style="@style/icons_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_small"

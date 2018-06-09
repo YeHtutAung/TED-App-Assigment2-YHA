@@ -54,7 +54,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="@dimen/margin_medium_2"
         android:text="13:38"
-        android:textColor="@color/secondary_text" />
+        android:textColor="@color/white_text" />
 
     <ImageView
         android:id="@+id/btn_white_vret"
