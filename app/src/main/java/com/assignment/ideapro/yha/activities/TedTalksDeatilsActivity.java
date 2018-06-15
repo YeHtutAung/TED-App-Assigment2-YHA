@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
 import com.assignment.ideapro.yha.R;
-import com.assignment.ideapro.yha.adapters.NewsAdapter;
 import com.assignment.ideapro.yha.adapters.WatchNextAdapter;
 import com.assignment.ideapro.yha.delegates.ITedTalkDelegate;
 

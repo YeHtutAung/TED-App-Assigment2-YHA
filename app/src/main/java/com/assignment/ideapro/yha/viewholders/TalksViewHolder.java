@@ -5,11 +5,11 @@ import android.view.View;
 
 import com.assignment.ideapro.yha.delegates.ITedTalkDelegate;
 
-public class NewsViewHolder extends RecyclerView.ViewHolder {
+public class TalksViewHolder extends RecyclerView.ViewHolder {
 
     private ITedTalkDelegate mDelegate;
 
-    public NewsViewHolder(View itemView, ITedTalkDelegate delegate) {
+    public TalksViewHolder(View itemView, ITedTalkDelegate delegate) {
         super(itemView);
         mDelegate = delegate;
         itemView.setOnClickListener(new View.OnClickListener() {

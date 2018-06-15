@@ -7,12 +7,12 @@ import android.view.ViewGroup;
 
 import com.assignment.ideapro.yha.R;
 import com.assignment.ideapro.yha.delegates.ITedTalkDelegate;
-import com.assignment.ideapro.yha.viewholders.NewsViewHolder;
+import com.assignment.ideapro.yha.viewholders.TalksViewHolder;
 
-public class NewsAdapter extends RecyclerView.Adapter {
+public class TalksAdapter extends RecyclerView.Adapter {
     private ITedTalkDelegate mDelegate;
 
-    public NewsAdapter(ITedTalkDelegate tedDelegate) {
+    public TalksAdapter(ITedTalkDelegate tedDelegate) {
         mDelegate = tedDelegate;
     }
 
@@ -23,7 +23,7 @@ public class NewsAdapter extends RecyclerView.Adapter {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.activity_newslist, parent, false);
 
-        return new NewsViewHolder(view, mDelegate);
+        return new TalksViewHolder(view, mDelegate);
     }
 
     @Override

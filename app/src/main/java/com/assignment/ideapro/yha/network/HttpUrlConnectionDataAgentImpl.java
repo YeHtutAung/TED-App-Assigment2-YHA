@@ -2,8 +2,8 @@ package com.assignment.ideapro.yha.network;
 
 import android.os.AsyncTask;
 import android.util.Log;
-import com.assignment.ideapro.yha.data.models.NewsModel;
-import com.assignment.ideapro.yha.utils.MMNewsConstant;
+import com.assignment.ideapro.yha.data.models.TedTalksModel;
+import com.assignment.ideapro.yha.utils.TedTalksConstant;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -21,7 +21,7 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HttpUrlConnectionDataAgentImpl implements NewsDataAgent {
+public class HttpUrlConnectionDataAgentImpl implements TedTalksDataAgent {
 
 
     private static HttpUrlConnectionDataAgentImpl objInstance;
@@ -38,7 +38,7 @@ public class HttpUrlConnectionDataAgentImpl implements NewsDataAgent {
     }
 
     @Override
-    public void loadNewsList(int page, final String accessToken) {
+    public void loadNewsList(final int page, final String accessToken) {
         new AsyncTask<Void, Void, String>() {
             @Override
             protected String doInBackground(Void... voids) {
@@ -49,7 +49,7 @@ public class HttpUrlConnectionDataAgentImpl implements NewsDataAgent {
                 try {
                     // create the HttpURLConnection
                     //http://www.aungpyaephyo.xyz/myanmar_attractions/getAttractionsList.php
-                    url = new URL(MMNewsConstant.MMNEWS_BASE_URL + MMNewsConstant.API_GET_LOAD_NEWS_LIST); //1.
+                    url = new URL(TedTalksConstant.TED_TALK_BASE_URL + TedTalksConstant.API_GET_TED_TALK_LIST); //1.
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection(); //2.
 
                     // just want to do an HTTP POST here
@@ -67,7 +67,9 @@ public class HttpUrlConnectionDataAgentImpl implements NewsDataAgent {
                     //put the request parameter into NameValuePair list.
                     List<NameValuePair> params = new ArrayList<>(); //6.
                     params.add(new BasicNameValuePair(
-                            MMNewsConstant.PARAM_ACCESS_TOKEN, accessToken));
+                            TedTalksConstant.PAGE, String.valueOf(page)));
+                    params.add(new BasicNameValuePair(
+                            TedTalksConstant.PARAM_ACCESS_TOKEN, accessToken));
 
                     //write the parameters from NameValuePair list into connection obj.
                     OutputStream outputStream = connection.getOutputStream();
@@ -116,7 +118,7 @@ public class HttpUrlConnectionDataAgentImpl implements NewsDataAgent {
             protected void onPostExecute(String result) {
                 super.onPostExecute(result);
                 if (result != null) {
-                    NewsModel.getIObjectInstance().loadNewsList();
+                    TedTalksModel.getIObjectInstance().loadNewsList();
                 }
             }
         }.execute();

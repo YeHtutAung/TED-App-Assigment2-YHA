@@ -10,7 +10,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.assignment.ideapro.yha.R;
-import com.assignment.ideapro.yha.adapters.NewsAdapter;
+import com.assignment.ideapro.yha.adapters.TalksAdapter;
+import com.assignment.ideapro.yha.data.models.TedTalksModel;
 import com.assignment.ideapro.yha.delegates.ITedTalkDelegate;
 
 public class MainActivity extends BaseActivity implements ITedTalkDelegate {
@@ -25,7 +26,7 @@ public class MainActivity extends BaseActivity implements ITedTalkDelegate {
 
         RecyclerView rvNews = findViewById(R.id.rv_news);
 
-        NewsAdapter newsAdapter = new NewsAdapter(this);
+        TalksAdapter newsAdapter = new TalksAdapter(this);
         rvNews.setAdapter(newsAdapter);
         rvNews.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
                 LinearLayoutManager.VERTICAL, false));
@@ -38,6 +39,8 @@ public class MainActivity extends BaseActivity implements ITedTalkDelegate {
                         .setAction("Action", null).show();
             }
         });
+
+        TedTalksModel.getIObjectInstance().loadNewsList();
     }
 
     @Override
