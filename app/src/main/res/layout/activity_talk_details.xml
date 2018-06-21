@@ -16,7 +16,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
-                android:id="@+id/iv_news_backdrop"
+                android:id="@+id/iv_talk_publication"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
@@ -92,40 +92,56 @@
             <LinearLayout
                 android:id="@+id/ll_date_listen"
                 style="@style/ted_details_style"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_text_brief"
                 android:layout_marginTop="@dimen/margin_small_n"
-                android:orientation="horizontal">
-
+                android:orientation="horizontal"
+                android:weightSum="7">
                 <TextView
-                    android:id="@+id/tv_posted_time"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_duration_in_sec"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="13:38      |"
+                    android:text="13:38"
                     android:textColor="@color/divider"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tv_divider"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="|"
+                    android:textColor="@color/divider"
+                    android:textStyle="bold"
+                    android:layout_weight="0.1"/>
 
                 <ImageView
                     android:id="@+id/btn_Listen"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="@dimen/margin_medium_2"
                     android:padding="@dimen/margin_small"
-                    android:src="@drawable/ic_volume_up_grey_light_24dp" />
+                    android:src="@drawable/ic_volume_up_grey_light_24dp"
+                    android:layout_weight="0.9"/>
 
                 <TextView
                     android:id="@+id/tv_listen"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="@dimen/margin_small"
                     android:text="Listen"
                     android:textColor="@color/divider"
-                    android:textStyle="bold" />
-
+                    android:textStyle="bold"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"/>
             </LinearLayout>
 
             <LinearLayout
@@ -201,7 +217,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/tv_text_details"
+                android:id="@+id/tv_talk_details"
                 style="@style/ted_details_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -218,7 +234,7 @@
                 style="@style/ted_details_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_text_details"
+                android:layout_below="@id/tv_talk_details"
                 android:layout_marginTop="@dimen/margin_small"
                 android:text="TED2018, Filmed Apr 2018"
                 android:textColor="@color/divider"
@@ -285,7 +301,7 @@
                 android:src="@drawable/ic_ingridlee_round" />
 
             <TextView
-                android:id="@+id/tv_bold_speaker_name"
+                android:id="@+id/tv_about_speaker_name"
                 style="@style/ted_details_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -301,8 +317,8 @@
                 android:id="@+id/tv_about_speaker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/tv_bold_speaker_name"
-                android:layout_below="@id/tv_bold_speaker_name"
+                android:layout_alignLeft="@id/tv_about_speaker_name"
+                android:layout_below="@id/tv_about_speaker_name"
                 android:layout_marginTop="@dimen/margin_small"
                 android:text="Designer, writer"
                 android:textColor="@color/secondary_text"
@@ -312,7 +328,7 @@
                 android:id="@+id/tv_speaker_bio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/tv_bold_speaker_name"
+                android:layout_alignLeft="@id/tv_about_speaker_name"
                 android:layout_below="@id/tv_about_speaker"
                 android:layout_marginTop="@dimen/margin_medium_2"
                 android:lineSpacingMultiplier="1.2"

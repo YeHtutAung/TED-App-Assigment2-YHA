@@ -4,7 +4,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/picture"
+        android:id="@+id/iv_publication"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_marginTop="@dimen/margin_medium"
@@ -14,43 +14,32 @@
         android:src="@drawable/ic_richard" />
 
     <TextView
-        android:id="@+id/tv_user_name"
+        android:id="@+id/tv_speaker_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/tv_topic"
-        android:layout_alignLeft="@+id/tv_topic"
+        android:layout_above="@+id/tv_title"
+        android:layout_alignLeft="@+id/tv_title"
         android:text="Ingrid Fetell Lee"
         android:textColor="@color/secondary_text"
         android:textSize="@dimen/text_regular" />
 
     <TextView
-        android:id="@+id/tv_topic"
+        android:id="@+id/tv_title"
         style="@style/WhiteTextBlackShadow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/tv_topic1"
+        android:layout_alignBottom="@+id/iv_publication"
+        android:layout_marginBottom="@dimen/margin_medium"
         android:layout_marginLeft="@dimen/margin_medium_2"
         android:text="Where joy hides and how to"
         android:textSize="@dimen/text_regular_3x"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tv_topic1"
-        style="@style/WhiteTextBlackShadow"
+        android:id="@+id/tv_duration_in_sec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/picture"
-        android:layout_marginBottom="@dimen/margin_medium"
-        android:layout_marginLeft="@dimen/margin_medium_2"
-        android:text="find it"
-        android:textSize="@dimen/text_regular_3x"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/tv_min"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tv_topic1"
+        android:layout_alignBottom="@+id/tv_title"
         android:layout_alignParentRight="true"
         android:layout_marginRight="@dimen/margin_medium_2"
         android:text="13:38"
@@ -60,7 +49,7 @@
         android:id="@+id/btn_white_vret"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/tv_topic"
+        android:layout_above="@id/tv_title"
         android:layout_alignParentRight="true"
         android:clickable="true"
         android:layout_marginRight="@dimen/margin_medium_2"

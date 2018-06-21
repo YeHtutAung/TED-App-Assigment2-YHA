@@ -4,10 +4,8 @@ import android.os.AsyncTask;
 import android.util.Log;
 import com.assignment.ideapro.yha.data.models.TedTalksModel;
 import com.assignment.ideapro.yha.utils.TedTalksConstant;
-
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -67,7 +65,7 @@ public class HttpUrlConnectionDataAgentImpl implements TedTalksDataAgent {
                     //put the request parameter into NameValuePair list.
                     List<NameValuePair> params = new ArrayList<>(); //6.
                     params.add(new BasicNameValuePair(
-                            TedTalksConstant.PAGE, String.valueOf(page)));
+                            TedTalksConstant.PARAM_PAGE, String.valueOf(page)));
                     params.add(new BasicNameValuePair(
                             TedTalksConstant.PARAM_ACCESS_TOKEN, accessToken));
 

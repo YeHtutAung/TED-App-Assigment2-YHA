@@ -6,15 +6,24 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.assignment.ideapro.yha.R;
 import com.assignment.ideapro.yha.adapters.TalksAdapter;
+import com.assignment.ideapro.yha.data.data.vos.TalksVO;
 import com.assignment.ideapro.yha.data.models.TedTalksModel;
 import com.assignment.ideapro.yha.delegates.ITedTalkDelegate;
+import com.assignment.ideapro.yha.events.SuccessGetTalksEvent;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 public class MainActivity extends BaseActivity implements ITedTalkDelegate {
+
+    private TalksAdapter mTalksAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +34,8 @@ public class MainActivity extends BaseActivity implements ITedTalkDelegate {
         //setSupportActionBar(toolbar);
 
         RecyclerView rvNews = findViewById(R.id.rv_news);
-
-        TalksAdapter newsAdapter = new TalksAdapter(this);
-        rvNews.setAdapter(newsAdapter);
+        mTalksAdapter = new TalksAdapter(this);
+        rvNews.setAdapter(mTalksAdapter);
         rvNews.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
                 LinearLayoutManager.VERTICAL, false));
 
@@ -44,30 +52,51 @@ public class MainActivity extends BaseActivity implements ITedTalkDelegate {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onTapImage() {
+    public void onTapImage(TalksVO talk) {
         Intent intent = new Intent(getApplicationContext(), TedTalksDeatilsActivity.class);
+        intent.putExtra("talkId", talk.getTalkId());
         startActivity(intent);
+    }
+
+    @Override
+    public void onTapFavorite(TalksVO news) {
+
+    }
+
+    @Override
+    public void onTapComments(TalksVO news) {
+
+    }
+
+    @Override
+    public void onTapSendTo(TalksVO news) {
+
+    }
+
+    @Override
+    public void onTapStatistics(TalksVO news) {
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (!EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().register(this);
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this);
+        }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onSuccessGetTalks(SuccessGetTalksEvent event) {
+        Log.d("onSuccessGetTalks", "onSuccessGetTalks : " + event.getTalksList());
+        mTalksAdapter.setTalkList(event.getTalksList());
     }
 }

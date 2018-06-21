@@ -1,17 +1,26 @@
 package com.assignment.ideapro.yha.data.data.vos;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class TalksVO {
 
+    @SerializedName("talk_id")
     private int talkId = 0;
+    @SerializedName("title")
     private String title = null;
+    @SerializedName("speaker")
     private SpeakersVO speakersVO = null;
+    @SerializedName("imageUrl")
     private String imageURL = null;
+    @SerializedName("durationInSec")
     private int durationInSec = 0;
+    @SerializedName("description")
     private String description = null;
-    private List<Tag> tags = null;
+    @SerializedName("tag")
+    private List<TagVO> tags = null;
 
     public int getTalkId() {
         return talkId;
@@ -37,7 +46,7 @@ public class TalksVO {
         return description;
     }
 
-    public List<Tag> getTags() {
+    public List<TagVO> getTags() {
         if (tags == null) {
             tags = new ArrayList<>();
         }
