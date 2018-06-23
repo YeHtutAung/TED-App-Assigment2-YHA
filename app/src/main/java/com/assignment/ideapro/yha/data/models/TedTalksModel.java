@@ -3,6 +3,7 @@ package com.assignment.ideapro.yha.data.models;
 import com.assignment.ideapro.yha.data.data.vos.TalksVO;
 import com.assignment.ideapro.yha.events.SuccessGetTalksEvent;
 import com.assignment.ideapro.yha.network.OkHttpDataAgentImpl;
+import com.assignment.ideapro.yha.network.Retrofit.RetrofitDataAgentImpl;
 import com.assignment.ideapro.yha.network.TedTalksDataAgent;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -21,7 +22,8 @@ public class TedTalksModel {
     private TedTalksModel() {
         mTalksMap = new HashMap<>();
         //mDataAgent = HttpUrlConnectionDataAgentImpl.getInstance();
-        mDataAgent = OkHttpDataAgentImpl.getInstance();
+        //mDataAgent = OkHttpDataAgentImpl.getInstance();
+        mDataAgent = RetrofitDataAgentImpl.getInstance();
         EventBus.getDefault().register(this);
     }
 
