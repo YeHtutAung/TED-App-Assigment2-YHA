@@ -13,6 +13,8 @@ import com.assignment.ideapro.yha.adapters.WatchNextAdapter;
 import com.assignment.ideapro.yha.data.data.vos.TalksVO;
 import com.assignment.ideapro.yha.data.models.TedTalksModel;
 import com.assignment.ideapro.yha.delegates.ITedTalkDelegate;
+import com.assignment.ideapro.yha.utils.CommonUtils;
+import com.assignment.ideapro.yha.utils.TedTalksConstant;
 import com.bumptech.glide.Glide;
 
 import butterknife.BindView;
@@ -48,8 +50,7 @@ public class TedTalksDeatilsActivity extends  BaseActivity implements ITedTalkDe
 
         ButterKnife.bind(this);
 
-        int talkId = getIntent().getIntExtra("talkId", 0);
-
+        int talkId = getIntent().getIntExtra(TedTalksConstant.KEY_TALK, 0);
         TalksVO talk = TedTalksModel.getIObjectInstance().getTalkById(talkId);
         setTalkData(talk);
         RecyclerView rvWatchNext = findViewById(R.id.rv_watch_next);
@@ -77,19 +78,19 @@ public class TedTalksDeatilsActivity extends  BaseActivity implements ITedTalkDe
             }
             tvTextBrief.setText(talk.getTitle());
             tvTalkDetails.setText(talk.getDescription());
-            tvDurationInSec.setText(getMinuteFromSec(talk.getDurationInSec()));
+            tvDurationInSec.setText(CommonUtils.getInstance().getMinuteFromSec(talk.getDurationInSec()));
         }
     }
 
-    private String getMinuteFromSec(int sec) {
-        int hours = sec / 3600;
-        int minutes = (sec % 3600) / 60;
-        int seconds = sec % 60;
-        if (hours == 0) {
-            return String.format("%02d:%02d", minutes, seconds);
-        }
-        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
-    }
+//    private String getMinuteFromSec(int sec) {
+//        int hours = sec / 3600;
+//        int minutes = (sec % 3600) / 60;
+//        int seconds = sec % 60;
+//        if (hours == 0) {
+//            return String.format("%02d:%02d", minutes, seconds);
+//        }
+//        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
+//    }
 
     @Override
     public void onTapFavorite(TalksVO talk) {

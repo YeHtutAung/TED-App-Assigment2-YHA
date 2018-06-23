@@ -116,7 +116,7 @@ public class HttpUrlConnectionDataAgentImpl implements TedTalksDataAgent {
             protected void onPostExecute(String result) {
                 super.onPostExecute(result);
                 if (result != null) {
-                    TedTalksModel.getIObjectInstance().loadNewsList();
+                    //TedTalksModel.getIObjectInstance().loadNewsList();
                 }
             }
         }.execute();

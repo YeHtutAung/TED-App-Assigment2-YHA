@@ -16,6 +16,7 @@ import com.assignment.ideapro.yha.data.data.vos.TalksVO;
 import com.assignment.ideapro.yha.data.models.TedTalksModel;
 import com.assignment.ideapro.yha.delegates.ITedTalkDelegate;
 import com.assignment.ideapro.yha.events.SuccessGetTalksEvent;
+import com.assignment.ideapro.yha.utils.TedTalksConstant;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -54,7 +55,7 @@ public class MainActivity extends BaseActivity implements ITedTalkDelegate {
     @Override
     public void onTapImage(TalksVO talk) {
         Intent intent = new Intent(getApplicationContext(), TedTalksDeatilsActivity.class);
-        intent.putExtra("talkId", talk.getTalkId());
+        intent.putExtra(TedTalksConstant.KEY_TALK, talk.getTalkId());
         startActivity(intent);
     }
 

@@ -6,4 +6,5 @@ public class TedTalksConstant {
 
     public static final String PARAM_ACCESS_TOKEN = "access_token";
     public static final String PARAM_PAGE = "page";
+    public static final String KEY_TALK = "talkId";
 }

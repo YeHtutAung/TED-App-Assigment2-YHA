@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.assignment.ideapro.yha.R;
 import com.assignment.ideapro.yha.data.data.vos.TagVO;
 import com.assignment.ideapro.yha.data.data.vos.TalksVO;
+import com.assignment.ideapro.yha.utils.CommonUtils;
 import com.bumptech.glide.Glide;
 
 import butterknife.BindView;
@@ -43,17 +44,18 @@ public class WatchNextViewHolder extends RecyclerView.ViewHolder {
                     .into(ivPublication);
             tvSpeakerName.setText(talk.getSpeakersVO().getName());
             tvTitle.setText(tag.getTag());
+            tvDurationInSec.setText(CommonUtils.getInstance().getMinuteFromSec(talk.getDurationInSec()));
         }
-        tvDurationInSec.setText(getMinuteFromSec(talk.getDurationInSec()));
+
     }
 
-    private String getMinuteFromSec(int sec) {
-        int hours = sec / 3600;
-        int minutes = (sec % 3600) / 60;
-        int seconds = sec % 60;
-        if (hours == 0) {
-            return String.format("%02d:%02d", minutes, seconds);
-        }
-        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
-    }
+//    private String getMinuteFromSec(int sec) {
+//        int hours = sec / 3600;
+//        int minutes = (sec % 3600) / 60;
+//        int seconds = sec % 60;
+//        if (hours == 0) {
+//            return String.format("%02d:%02d", minutes, seconds);
+//        }
+//        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
+//    }
 }
